@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <%- newrelic %>
+    <link type="image/png" href="https://www.wix.com/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="<%= staticsBaseUrl %>app<% if (!debug) { %>.min<% } %>.css">
+    <script src="https://unpkg.parastorage.com/core-js@2.5.1/client/shim<% if (!debug) { %>.min<% } %>.js"></script>
+    <script src="https://unpkg.parastorage.com/react@15.6.1/dist/react<% if (!debug) { %>.min<% } %>.js"></script>
+    <script src="https://unpkg.parastorage.com/react-dom@15.6.1/dist/react-dom<% if (!debug) { %>.min<% } %>.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      window.__BASEURL__ = '<%= basename %>';
+      window.__LOCALE__ = '<%= locale %>';
+      window.__STATICS_BASE_URL__ = '<%= staticsBaseUrl %>';
+    </script>
+    <script src="<%= staticsBaseUrl %>app.bundle<% if (!debug) { %>.min<% } %>.js"></script>
+  </body>
+</html>
